@@ -1,0 +1,11 @@
+certifi==2021.10.8
+charset-normalizer==2.0.10
+idna==3.3
+numpy==1.22.2
+protobuf==3.19.4
+pygame @ git+https://github.com/pygame/pygame.git@96828d42b82d0fd2b9a89105fde93c3c5e8d4b2e
+python-decouple==3.6
+requests==2.27.1
+six==1.16.0
+tqdm==4.62.3
+urllib3==1.26.8
