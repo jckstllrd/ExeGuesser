@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    'ecm2434.apps.Ecm2434Config',
 ]
 
 MIDDLEWARE = [
