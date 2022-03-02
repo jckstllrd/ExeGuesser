@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import activeGame
 
 # Create your views here.
 def home(request):
@@ -10,5 +11,6 @@ def createGame(request):
     return render(request, 'game/createGame.html', context)
 
 def joinGame(request):
-    context = {}
+    active_games_list = activeGame.objects.order_by('gameName')
+    context = {'active_games_list': active_games_list}
     return render(request, 'game/joinGame.html', context)
