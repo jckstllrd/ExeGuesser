@@ -1,0 +1,15 @@
+<h2>Games</h2>
+
+{% if active_games_list %}
+    <ul>
+    {% for game in active_games_list %}
+        <li><a href="/game/{{ game.id }}/">{{ game.gameName }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No games are available.</p>
+{% endif %}
+
+<a href={% url 'home' %}>
+    <button type="submit">Home</button>
+</a>
