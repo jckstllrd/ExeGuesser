@@ -1,0 +1,47 @@
+<title>ExeGuesser</title>
+
+<script>
+
+    let stopTimer;
+    let timeLeft = 120;
+
+    //function performed when the start game button is pressed. Creates a timer and  sets the photo.
+    function startGame() {
+        document.getElementById("photo").src = "exeterSign.jpg";
+        document.getElementById("photo").style.margin = "30px 10px 10px 10px"
+        stopTimer = setInterval(timer, 1000);
+        document.getElementById('timerLabel').innerHTML = 'Time Left: ';
+        function timer() {
+            document.getElementById("timer").innerHTML = timeLeft -= 1;
+            if (timeLeft <= 30) {
+                document.getElementById("timer").style.color = "red";
+            }
+            if (timeLeft <= 0) {
+                alert("Times Up! Try again")
+                clearInterval(stopTimer);
+            }
+        }
+    }
+
+    //stop the timer running and ping an alert with the win message.
+    function stopGame() {
+        clearInterval(stopTimer);
+        let timeTaken = 120 - timeLeft;
+        alert(`Congratulations of have found the location in ${timeTaken} seconds!"`)
+    }
+
+</script>
+<div align="right">
+    <p>USERNAME</p>
+    <button>logout</button>
+    <button>home</button>
+</div>
+
+<div align="center">
+    <button onclick="startGame()">Start Game</button><br />
+    <img src="" id="photo" />
+    <h1 id="timerLabel"> </h1>
+    <p id="timer" style="font-size:24px"></p>
+
+    <button onclick="stopGame()">Found it!</button>
+</div>
