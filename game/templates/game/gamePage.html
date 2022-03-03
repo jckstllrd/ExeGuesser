@@ -32,9 +32,13 @@
 
 </script>
 <div align="right">
-    <p>USERNAME</p>
-    <button>logout</button>
-    <button>home</button>
+    <p>{{user.username}}</p>
+    <a href={% url 'logout' %}>
+    <button type="submit">Logout</button>
+    </a>
+    <a href={% url 'home' %}>
+    <button type="submit">Home</button>
+    </a>
 </div>
 
 <div align="center">
