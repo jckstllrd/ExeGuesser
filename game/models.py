@@ -1,6 +1,6 @@
 from django.db import models
 
-#Create your models here.
+#A model for active games to be displayed
 class activeGame(models.Model):
     gameName = models.CharField(max_length=200)
     gameDesc = models.CharField(max_length=200)
