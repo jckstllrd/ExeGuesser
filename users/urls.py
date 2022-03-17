@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+#all the urls for our different page views
 urlpatterns = [
     path('', views.index, name='index'),
     path('login/', views.loginPage, name='login'),

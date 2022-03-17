@@ -1,4 +1,5 @@
 from django.contrib import admin
 from .models import activeGame
-# Register your models here.
+
+#Adding active games to the admin page
 admin.site.register(activeGame)

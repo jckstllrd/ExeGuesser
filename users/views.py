@@ -4,14 +4,14 @@ from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import RegistrationForm
 
-
-
-# Create your views here.
+#index page for the exeguesser site
 def index(request):
     context = {} 
     return render(request, 'users/index.html', context)
 
+
 def loginPage(request):
+    #checking if a user has tried to login, if valid they get redirected to the home page
 	if request.method == "POST":
 		form = AuthenticationForm(request, data=request.POST)
 		if form.is_valid():
@@ -30,6 +30,7 @@ def loginPage(request):
 	return render(request=request, template_name="users/login.html", context={"login_form":form})
 
 def registerPage(request):
+    #checks if form submitted and is valid, adds user to database and redirects to home
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
@@ -51,6 +52,7 @@ def registerPage(request):
 
     return render(request, 'users/register.html', {'form': form})
 
+#Allows the user to logout and then redirects them to index page
 def logout_request(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.") 
