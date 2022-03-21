@@ -1,4 +1,21 @@
-<h2>Welcome to ExeGuesser!</h2>
+{% load static %}
 
-<a href="login"><button type="submit">Login</button><br>
-<a href="register"><button type="submit">Register</button>
+<html>
+    <head>
+        <title>ExeGuesser</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'users/index.css' %}">
+    </head>
+    <body>
+        <div class="welcome"><h1>Welcome to ExeGuesser!</h1></div>
+        
+
+
+        
+        <div class="login"><a href="login"><button type="submit">Login</button></div>
+        <div class="register"><a href="register"><button type="submit">Register</button></div>
+
+    </body>
+
+
+</html>
+
