@@ -1,0 +1,14 @@
+body {
+  margin: auto;
+  text-align: center;
+  background-color: #3aafa9;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.welcome {
+  margin-top: 10rem;
+}
+
+.login button {
+}
+.register button {
+}

@@ -115,6 +115,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+STATICFILES_DIRS = [
+    '/Users/jackstallard/OneDrive - University of Exeter/Year 2/Term 2/Group Software Engineering Project/Group Project/ExeGuesser/users/static',
+]
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
