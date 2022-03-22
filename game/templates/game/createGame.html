@@ -1,5 +1,38 @@
-<form method="post" action="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Create</button>
-</form>
+{% load static %}
+
+<html>
+
+<link rel="stylesheet" type="text/css" href="{% static 'game/createGame.css' %}">
+<div class="banner">
+    <img  id="logo" src="{% static "media/ExeGuesser.png" %}" alt="home" width="500px" />
+    <p class="username"><strong>User: </strong>{{ user.username }}</p>
+</div>
+<div class="mainpage">
+    <div class="controls">
+
+        <a href="{% url 'logout' %}"><button id="logout"><strong>Logout</strong></button></a>
+        <table>
+
+            <th>
+                <input class="control" type=button value="Back" onClick="javascript:history.go(-1);">
+            </th>
+
+            <th>
+                <input class="control" type=button value="Home" onClick="window.location.href='{% url 'home' %}';">
+            </th>
+
+        </table>
+
+    </div>
+    <body>
+        <form method="post" action="" class="inputForm">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create</button>
+    </form>
+    </body>
+
+</div>
+
+</html>
+
