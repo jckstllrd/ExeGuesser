@@ -54,7 +54,9 @@ button:hover {
 #logo {
   position: fixed;
   left: 10px;
-  height: 10%;
+  max-height: 10%;
+  width: auto;
+  height: auto;
 }
 
 /*#login, #register {*/
