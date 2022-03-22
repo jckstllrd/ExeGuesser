@@ -1,37 +1,78 @@
+{% load static %}
+
 <html>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="False" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-            {% if user.is_authenticated %}
-            
-            <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Welcome, {{user.username}}</a>
-            </li>
-    
-            {% else %}
-    
-            <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-            </li>
-    
-            {% endif %}
-        </ul>
-        </div>
-    </nav>
+
+<link rel="stylesheet" type="text/css" href="{% static 'game/home.css' %}">
+
+    {% if user.is_authenticated %}
+
+    <div class="banner">
+        <img  id="logo" src="{% static "media/ExeGuesser.png" %}" alt="home" width="500px" />
+        <p class="username"><strong>User: </strong>{{ user.username }}</p>
+
+    </div>
+    <div class="mainpage">
+    <div class="controls">
+        <input id="back" type=button value="Back" onClick="javascript:history.go(-1);">
+
+        <a href="{% url 'logout' %}"><button id="logout"><strong>Logout</strong></button></a>
+
+    </div>
+
+
+{#        <ul class="navbar-nav mr-auto">#}
+{#            {% if user.is_authenticated %}#}
+{##}
+{#            <li class="nav-item">#}
+{#            <a class="nav-link" href="{% url 'logout' %}">Logout</a>#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#            <a class="nav-link" href="#">Welcome, {{user.username}}</a>#}
+{#            </li>#}
+{##}
+{#            {% else %}#}
+{##}
+{#            <li class="nav-item">#}
+{#            <a class="nav-link" href="/login">Login</a>#}
+{#            </li>#}
+{##}
+{#            {% endif %}#}
+{#        </ul>#}
+
     <body>
+    <div class="gameButtons">
+
         <a href={% url 'createGame' %}>
             <button type="sumit">Create Game</button>
         </a>
         <a href={% url 'joinGame' %}>
             <button type="submit">Join Game</button>
         </a>
+
+    </div>
     </body>
+
+
+    </div>
+
+        {% else %}
+
+        <div class="banner">
+
+            <img  id="logo" src="{% static "media/ExeGuesser.png" %}" alt="home" width="500px" />
+
+        </div>
+        <div class="mainpage">
+
+            <div class="controls"></div>
+            <p id="errorMessage">Opps! It seems you aren't logged in click here to log in:</p>
+            <a href={% url 'login' %}>
+            <button type="sumit">Login</button>
+            </a>
+
+        </div>
+
+
+        {% endif %}
 
 </html>
