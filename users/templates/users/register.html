@@ -1,20 +1,49 @@
 {% block content %}
-<h2>Register</h2>
- <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
+{% load static %}
+
+<title>Register</title>
+<link rel="stylesheet" type="text/css" href="{% static 'users/register.css' %}">
+<body>
+
+    <div class="banner">
+        <img  id="logo" src="{% static "media/ExeGuesser.png" %}" alt="home" width="500px" />
+
+
+    </div>
+
+<div class="mainpage">
+<div class="controls">
+    <input id="back" type=button value="Back" onClick="javascript:history.go(-1);">
+</div>
+    <div class="content">
+      <h2 id="title">Register</h2>
+     <form method="post">
+
+        {% csrf_token %}
+        {% for field in form %}
+          <p>
+            {{ field.label_tag }}<br>
+            {{ field }}
+              {% if field.help_text %}
+              <small style="color: grey">{{ field.help_text }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+              <p style="color: red">{{ error }}</p>
+            {% endfor %}
+          </p>
         {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
- 
+
+        <button type="submit">Sign up</button>
+
+      </form>
+
+
+    </div>
+</div>
+
+</body>
+
+
+
+
 {% endblock %}
