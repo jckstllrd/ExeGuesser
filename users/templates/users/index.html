@@ -2,18 +2,30 @@
 
 <html>
     <head>
-        <title>ExeGuesser</title>
+
         <link rel="stylesheet" type="text/css" href="{% static 'users/index.css' %}">
+        <div class="banner">
+
+            <div class="banner_content">
+                <img  id="logo" src="{% static "media/ExeGuesser.png" %}" alt="home" width="500px" />
+                <title>ExeGuesser</title>
+            </div>
+
+        </div>
+
     </head>
     <body>
-        <div class="welcome"><h1>Welcome to ExeGuesser!</h1></div>
-        
+    <div class="vertical_banner_color"></div>
 
+    <div class="vertical_banner_position">
+        <span class="solid">
+            <h1 class="welcome">Welcome to ExeGuesser!</h1>
+            <a href="login"><button type="submit">Login</button></a>
+            <a href="register"><button type="submit">Register</button></a>
+        </span>
 
-        
-        <div class="login"><a href="login"><button type="submit">Login</button></div>
-        <div class="register"><a href="register"><button type="submit">Register</button></div>
-
+    </div>
+    <img class="background" src="{% static "media/exeter.jpeg" %}">
     </body>
 
 
