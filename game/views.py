@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from .models import activeGame
 from .forms import GameCreatorForm
+from .models import locations
+from .forms import LocationForm
+import random
 
 #Home page view
 def home(request):
@@ -32,4 +35,18 @@ def joinGame(request):
 def game(request, game_id):
     #Page for the game to take place
     context = {}
+    
     return render(request, 'game/gamePage.html', context)
+
+def locationUpload(request):
+    #Page to allow a game keeper to add locations for the game
+    if request.method == 'POST':
+        form = LocationForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return HttpResponse('successfully uploaded')
+    else:
+        form = LocationForm()
+        
+    return render(request, 'game/locationUpload.html', {'form':form})
