@@ -9,3 +9,10 @@ class activeGame(models.Model):
     
     def __str__(self):
         return self.gameName
+
+class locations(models.Model):
+    locationName = models.CharField(max_length=50)
+    locationImage = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return self.locationName
