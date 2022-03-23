@@ -7,3 +7,9 @@ class GameCreatorForm(ModelForm):
     class Meta:
         model = activeGame
         fields = '__all__'
+        
+#A form for the databse of locations
+class LocationForm(ModelForm):
+    class Meta:
+        model = locations
+        fields = ['locationName','locationImage']        
