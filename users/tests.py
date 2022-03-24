@@ -1,13 +1,14 @@
 from re import sub
 from urllib.request import urlretrieve
 from django.test import LiveServerTestCase
+from numpy import equal
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
 class RegistrationFormTest(LiveServerTestCase):
 
-    def testform(self):
+    def testredirect(self):
         selenium = webdriver.Chrome()
 
         selenium.get('http://127.0.0.1:8000/register/')
@@ -24,4 +25,4 @@ class RegistrationFormTest(LiveServerTestCase):
 
         submit.send_keys(Keys.RETURN)
 
-        assert urlretrieve
+        assert equal
