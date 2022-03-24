@@ -19,6 +19,4 @@ There are two types of accounts: users and game keepers. Users are able to join 
 
 Game keepers must upload their selection of images of chosen locations once the app has been started before any games can be played. 
 
-Upon start up, the user is given the option to register an account or log in to an existing one. Once signed into an account, they have the option to create a game (if they are a game keeper), or join an existing one. Once the game begins, the user is prompted with an image of a location on campus and the timer begins. They must make their way to that location, and click the button to say you're in the location. The app 
-uses the location of the user to verify if they are in the correct place, the user's location is only tracked when they are logged into the game. If they are in the correct place, their score is given in the form 
-of the time it took for them to find the correct location.
+Upon start up, the user is given the option to register an account or log in to an existing one. Once signed into an account, they have the option to create a game (if they are a game keeper), or join an existing one. Once the game begins, the user is prompted with an image of a location on campus and the timer begins. The user can obtain a new location upon reloading the game. (explain how the game works)
