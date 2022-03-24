@@ -13,9 +13,9 @@
     <input id="back" type=button value="Back" onClick="javascript:history.go(-1);">
 </div>
 <div class="content">
+          <br>
   <h1>Login</h1>
   <form method="POST">
-
     {% csrf_token %}
     {{ login_form.as_p }}
     <button class="btn btn-primary" type="submit">Login</button>

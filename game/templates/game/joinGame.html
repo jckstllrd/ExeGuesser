@@ -1,15 +1,49 @@
-<h2>Games</h2>
+{% load static %}
 
-{% if active_games_list %}
-    <ul>
-    {% for game in active_games_list %}
-        <li><a href="/game/{{ game.id }}/">{{ game.gameName }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No games are available.</p>
-{% endif %}
 
-<a href={% url 'home' %}>
-    <button type="submit">Home</button>
-</a>
+<link rel="stylesheet" type="text/css" href="{% static 'game/joinGame.css' %}">
+<div class="banner">
+
+        <img  id="logo" src="{% static "media/ExeGuesser.png" %}" alt="home" width="500px" />
+</div>
+
+<div class="mainpage">
+
+    <div class="controls">
+
+        <a href="{% url 'logout' %}"><button id="logout"><strong>Logout</strong></button></a>
+        <table>
+
+            <th>
+                <input class="control" type=button value="Back" onClick="javascript:history.go(-1);">
+            </th>
+
+            <th>
+                <input class="control" type=button value="Home" onClick="window.location.href='{% url 'home' %}';">
+            </th>
+
+        </table>
+
+    </div>
+
+    <div class="content">
+
+        <h2 id="gameTitle">Games</h2>
+
+        {% if active_games_list %}
+            <ul>
+            {% for game in active_games_list %}
+                <li><a href="/game/{{ game.id }}/"><strong><p class="game">{{ game.gameName }}</p></strong></a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No games are available.</p>
+        {% endif %}
+
+
+    </div>
+
+
+
+
+</div>
