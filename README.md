@@ -31,6 +31,9 @@ STYLING
 -------
 
 Colors:
-  Background-color: rgba(104, 128, 56, 0.47)
-  Upper Baner/Logo background-color: #71cec9
-  Control Bar Color: #1e5755
+
+Background-color: rgba(104, 128, 56, 0.47)
+
+Upper Baner/Logo background-color: #71cec9
+
+Control Bar Color: #1e5755
