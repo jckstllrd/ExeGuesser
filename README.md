@@ -8,6 +8,10 @@ Django is required for the app to function. Details on how to install Django can
 In order to begin the app, the following command needs to be launched at command line interface: 
 $ python manage.py runserver 
 
+Before the app is launched, the following 2 commands need to be run in order for the app to work:
+$ python manage.py makemigrations
+$ python manage.py migrate
+
 The shell will respond with a message containing a web address (e.g. http://127.0.0.1:8000). This is the address where the game will run from. 
 The server will run until a CTRL + BREAK is put into the command line.
 

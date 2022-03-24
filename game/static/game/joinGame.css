@@ -19,6 +19,16 @@ button:hover {
 
 }
 
+ul {
+    list-style-type: none;
+}
+
+.gameButtons {
+    position: fixed;
+    top: 18%;
+    left: 11%;
+}
+
 .mainpage {
     position: fixed;
     top:15%;
@@ -46,12 +56,31 @@ button:hover {
     width: 80%;
     height: 2%;
     background-color: #1e5755;
-}
+    display: inline-block;}
 
-#back {
+#logout {
     position: fixed;
+    right: 10%;
     top: 15%;
     max-height: 1.8%;
+    width: auto;
+    height: auto;
+    margin-top:0.05%;
+    background-color: #1e5655;
+    padding-top: 0%;
+    border-left: 1px, solid, #0c2625;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    color: lightgray;
+    font-size: 15px;
+    padding:1px;
+}
+
+.control {
+    /*position: fixed;*/
+    /*top: 15%;*/
+    /*max-height: 1.8%;*/
     width: auto;
     height: auto;
     margin-top:0.05%;
@@ -64,8 +93,23 @@ button:hover {
     color: lightgray;
 }
 
-#back:hover {
+.control:hover {
     background-color: #143d3b;
+    transition-duration: 0.5s;
+}
+
+.username {
+    position: fixed;
+    right: 10%;
+    padding-right: 0.5%;
+}
+
+#logout:hover {
+    box-shadow: none;
+}
+
+#logout:hover {
+    background-color: #0f2f2d;
     transition-duration: 0.5s;
 }
 
@@ -79,4 +123,28 @@ button:hover {
 
 #title {
     padding-top: 10px;
+}
+
+#gameTitle {
+    padding-Top: 20px;
+}
+
+.inputForm {
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+.game {
+    background-color: #bdbdbd;
+    display: inline-block;
+    width: 90%;
+    margin: 5px;
+    padding: 2px;
+    text-align: center;
+}
+
+.game:hover {
+    background-color: #676767;
+    transition-duration: 0.5s;
+    box-shadow: 2px 2px #000000;
 }
