@@ -1,5 +1,6 @@
 from django.forms import ModelForm
 from .models import activeGame
+from .models import locations
 
 
 #A form for the creation of games
