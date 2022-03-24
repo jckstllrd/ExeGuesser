@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LocationUpload</title>
+</head>
+<body>
+    <form method = "post" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+    <a href={% url 'home' %}>
+        <button type="submit">Home</button>
+    </a>
+</body>
+</html>
