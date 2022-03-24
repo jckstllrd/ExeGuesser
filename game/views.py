@@ -3,6 +3,7 @@ from .models import activeGame
 from .forms import GameCreatorForm
 from .models import locations
 from .forms import LocationForm
+from django.contrib import messages
 import random
 
 #Home page view
@@ -34,7 +35,9 @@ def joinGame(request):
 
 def game(request, game_id):
     #Page for the game to take place
-    context = {}
+    locationList = list(locations.objects.all())
+    randLocation = random.choice(locationList)
+    context = {'location' : randLocation}
     
     return render(request, 'game/gamePage.html', context)
 
@@ -45,7 +48,7 @@ def locationUpload(request):
 
         if form.is_valid():
             form.save()
-            return HttpResponse('successfully uploaded')
+            messages.info(request, "Location successfully uploaded")
     else:
         form = LocationForm()
         
