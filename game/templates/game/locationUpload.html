@@ -1,18 +1,55 @@
-
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'game/home.css' %}">
     <meta charset="UTF-8">
     <title>LocationUpload</title>
 </head>
-<body>
-    <form method = "post" enctype="multipart/form-data" action="">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
-    </form>
-    <a href={% url 'home' %}>
-        <button type="submit">Home</button>
-    </a>
+
+<div class="banner">
+    <img  id="logo" src="{% static "media/ExeGuesser.png" %}" alt="home" width="500px" />
+    <p class="username"><strong>User: </strong>{{ user.username }}</p>
+
+</div>
+
+<div class="mainpage">
+
+    <div class="controls">
+
+        <a href="{% url 'logout' %}"><button id="logout"><strong>Logout</strong></button></a>
+        <table>
+
+            <th>
+                <input class="control" type=button value="Back" onClick="javascript:history.go(-1);">
+            </th>
+
+            <th>
+                <input class="control" type=button value="Home" onClick="window.location.href='{% url 'home' %}';">
+            </th>
+
+        </table>
+
+
+    </div>
+
+    <body>
+    <div class="content">
+        <br>
+        <form method = "post" enctype="multipart/form-data" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Upload</button>
+        </form>
+        <a href={% url 'home' %}>
+            <button type="submit">Home</button>
+        </a>
+
+    </div>
 </body>
+
+</div>
+
+
 </html>
